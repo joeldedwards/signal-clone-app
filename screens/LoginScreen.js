@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { StyleSheet, Text, View, KeyboardAvoidingView } from 'react-native'
 import { Button, Input, Image } from 'react-native-elements'
 import { StatusBar } from 'expo-status-bar'
+import tw from 'tailwind-react-native-classnames'
+// <View style={tw`h-1/2`}></View>
 
 const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState('');
@@ -15,9 +17,10 @@ const LoginScreen = ({ navigation }) => {
         <KeyboardAvoidingView behavior='padding' style={styles.container}>
             <StatusBar style='light' />
             <Image
-                source={{ uri: 'https://blog.mozilla.org/internetcitizen/files/2018/08/signal-logo.png' }}
-                style={{ width: 200, height: 200 }}
+                source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/Signal-logo.png' }}
+                style={{ width: 200, height: 100, resizeMode: 'contain' }}
             />
+            
             <View style={styles.inputContainer}>
                 <Input 
                 placeholder='Email' 
