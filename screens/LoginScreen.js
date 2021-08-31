@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import { StyleSheet, Text, View, KeyboardAvoidingView } from 'react-native'
 import { Button, Input, Image } from 'react-native-elements'
 import { StatusBar } from 'expo-status-bar'
-import tw from 'tailwind-react-native-classnames'
-// <View style={tw`h-1/2`}></View>
 
 const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState('');
