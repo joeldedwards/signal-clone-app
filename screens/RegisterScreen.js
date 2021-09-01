@@ -20,11 +20,12 @@ const RegisterScreen = ({ navigation }) => {
     const register = () => {
         auth.createUserWithEmailAndPassword(email, password)
         .then(authUser => {
-            authUser.user.update({
+            console.log(email)
+            authUser.user.updateProfile({
                 displayName: name,
                 photoURL: imageUrl || 'https://cencup.com/wp-content/uploads/2019/07/avatar-placeholder.png'
             })
-        }). catch(error => alert(error.message))
+        }).catch(error => alert(error.message))
     }
 
     return (
@@ -40,22 +41,23 @@ const RegisterScreen = ({ navigation }) => {
                     autofocus 
                     type='text' 
                     value={name} 
-                    onChange={(text) =>setName(text)} />
+                    onChangeText={(text) =>setName(text)} />
                 <Input 
                     placeholder='Email' 
-                    type='text' value={email} 
-                    onChange={(text) =>setEmail(text)} />
+                    type='email' 
+                    value={email} 
+                    onChangeText={(text) =>setEmail(text)} />
                 <Input 
                     placeholder='Password' 
                     type='password' 
                     value={password} 
                     secureTextEntry 
-                    onChange={(text) =>setPassword(text)} />
+                    onChangeText={(text) =>setPassword(text)} />
                 <Input 
                     placeholder='Profile Picture URL (optional)' 
                     type='text' 
                     value={imageUrl} 
-                    onChange={(text) =>setImageUrl(text)} 
+                    onChangeText={(text) =>setImageUrl(text)} 
                     onSubmitEditing={register} />
             </View>
 
