@@ -2,15 +2,23 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { ListItem, Avatar } from 'react-native-elements'
 
-const CustomListItem = () => {
+const CustomListItem = (id, chatName, enterChat) => {
     return (
         <ListItem>
             <Avatar
             rounded
             source={{
-                uri: 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50'
+                uri: 'https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c545.png'
             }}
              />
+             <ListItem.Content>
+                <ListItem.Title style={{ fontWeight: '800' }}>
+                    YouTube Chat
+                </ListItem.Title>
+                <ListItem.Subtitle numberOfLines={1} ellipsizeMode='tail'>
+                    Lorem ipsum
+                </ListItem.Subtitle>
+             </ListItem.Content>
         </ListItem>
     )
 }
