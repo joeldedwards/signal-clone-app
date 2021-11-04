@@ -1,8 +1,8 @@
 import React, { useLayoutEffect } from 'react'
-import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView, Platform, KeyboardAvoidingView } from 'react-native'
 import { Avatar } from 'react-native-elements'
 import { AntDesign, FontAwesome, Ionicons } from '@expo/vector-icons'
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar } from 'expo-status-bar'
 
 const ChatScreen = ({navigation, route}) => {
     
@@ -53,7 +53,12 @@ const ChatScreen = ({navigation, route}) => {
     return (
         <SafeAreaView style={styles.container}>
             <StatusBar style='light' />
-            <Text></Text>
+            <KeyboardAvoidingView 
+            behavior={Platform.OS === 'ios' ? 'padding' : 'height'} 
+            style={styles.container} 
+            keyboardVerticalOffset={90}>
+
+            </KeyboardAvoidingView>
         </SafeAreaView>
     )
 }
