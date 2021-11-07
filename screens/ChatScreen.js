@@ -8,8 +8,8 @@ import { db, auth } from '../firebase'
 
 const ChatScreen = ({navigation, route}) => {
     const [input, setInput] = useState('')
-    let chatId = route.params.id.id
     const [messages, setMessages] = useState([])
+    let chatId = route.params.id.id
         
     useLayoutEffect(() => {
         navigation.setOptions({

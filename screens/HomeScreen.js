@@ -2,7 +2,7 @@ import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { SafeAreaView, TouchableOpacity } from 'react-native'
 import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import { Avatar } from 'react-native-elements'
-import { AntDesign, SimpleLineIcons } from '@expo/vector-icons'
+import { AntDesign, SimpleLineIcons, FontAwesome } from '@expo/vector-icons'
 import CustomListItem from '../components/CustomListItem'
 import { auth, db } from '../firebase'
 
@@ -48,12 +48,12 @@ const HomeScreen = ({navigation}) => {
                     marginRight: 20
                 }}>
                     <TouchableOpacity activeOpacity={0.5}>
-                        <AntDesign name='camerao' size={24} color='black' />
+                        <FontAwesome name='camera' size={24} color='black'/>
                     </TouchableOpacity>
                     <TouchableOpacity 
                         onPress={() => navigation.navigate('AddChat')} 
                         activeOpacity={0.5}>
-                        <SimpleLineIcons name='pencil' size={24} color='black' />
+                        <FontAwesome name='pencil' size={24} color='black' />
                     </TouchableOpacity>
                 </View>
             )
