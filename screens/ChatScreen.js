@@ -24,7 +24,8 @@ const ChatScreen = ({navigation, route}) => {
                     <Avatar 
                         rounded
                         source={{
-                            uri: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
+                            uri: messages[0]?.data.photoURL ||
+                            'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
                         }} />
                     <Text style={{marginLeft: 10, fontWeight: '700', color: 'white'}}>{route.params.id.chatName}</Text>
                 </View>
@@ -53,7 +54,7 @@ const ChatScreen = ({navigation, route}) => {
                 </View>
             )
         }) 
-    }, [navigation])
+    }, [navigation, messages])
 
     const sendMessage = () => {
         Keyboard.dismiss();
